@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { BookOpen, PlayCircle, Lock } from 'lucide-react';
+import API_URL from '../config/api';
 
 const Learn = () => {
   const [topics, setTopics] = useState([]);
@@ -14,7 +15,7 @@ const Learn = () => {
       if (!token) return navigate('/login');
 
       try {
-        const res = await fetch('http://localhost:3000/api/topics', {
+        const res = await fetch(`${API_URL}/topics`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const data = await res.json();

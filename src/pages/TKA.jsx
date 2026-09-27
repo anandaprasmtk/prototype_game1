@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { Clock, BarChart3, CheckCircle, XCircle, ArrowRight } from 'lucide-react';
+import API_URL from '../config/api';
 
-const API = 'http://localhost:3000/api';
+const API = API_URL;
 
 // ── Timer hook ─────────────────────────────────────────────────────
 const useTimer = (active) => {

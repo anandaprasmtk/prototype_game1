@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { Target, Flame, Star, Sparkles, BookOpen, BarChart3, Award, Zap } from 'lucide-react';
+import API_URL from '../config/api';
 
-const API = 'http://localhost:3000/api';
+const API = API_URL;
 
 const Dashboard = () => {
   const [data, setData] = useState(null);
