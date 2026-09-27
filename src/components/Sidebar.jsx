@@ -42,18 +42,16 @@ const Sidebar = () => {
             </Link>
           );
         })}
-      </nav>
-
-      <div className="sidebar-nav mt-auto">
+        {/* Logout button as a nav item for mobile bottom nav compatibility */}
         <button
           onClick={handleLogout}
-          className="nav-item w-full"
-          style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--text-muted)', width: '100%' }}
+          className="nav-item"
+          style={{ background: 'none', border: 'none', cursor: 'pointer' }}
         >
           <LogOut size={20} />
           <span>Keluar</span>
         </button>
-      </div>
+      </nav>
     </aside>
   );
 };

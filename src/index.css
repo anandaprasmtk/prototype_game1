@@ -435,13 +435,84 @@ textarea.input {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .sidebar { display: none; }
+  .app-layout { 
+    flex-direction: column; 
+    padding-bottom: 70px; /* Space for bottom nav */
+  }
+  
+  .sidebar { 
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: auto;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    padding: 0.5rem;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    z-index: 50;
+    background: var(--bg-surface);
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Hide Logo and Logout button on bottom nav */
+  .sidebar > .flex.items-center, 
+  .sidebar > .mt-auto { 
+    display: none; 
+  }
+
+  .sidebar .sidebar-nav {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0;
+  }
+
+  .nav-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.65rem;
+    justify-content: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .nav-item svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .grid-cols-2 { grid-template-columns: 1fr; }
   .grid-cols-3 { grid-template-columns: 1fr; }
   .grid-cols-4 { grid-template-columns: repeat(2, 1fr); }
-  .text-5xl { font-size: 2rem; }
+  
+  .text-5xl { font-size: 2.25rem; }
   .text-4xl { font-size: 1.75rem; }
-  .main-content { padding: 1rem; }
+  .text-3xl { font-size: 1.5rem; }
+  
+  .main-content { padding: 1.25rem 1rem; }
+  .container { padding: 0 1rem; }
+  
+  .auth-card {
+    padding: 1.75rem;
+    margin: 1rem;
+    border-radius: var(--radius-lg);
+  }
+
+  .card {
+    padding: 1.25rem;
+  }
+
+  /* For Problem Solving inputs */
+  textarea.input {
+    font-size: 16px; /* Prevents iOS Safari zoom */
+  }
+  
+  input {
+    font-size: 16px; 
+  }
 }
 
 /* Scrollbar styling */
